@@ -38,10 +38,19 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: 
+    "search search"
     "current current"
     "hourly hourly"
     "fiveday fiveday"
     "feelslike humidity";
+    gap: var(--spacing-regular);
+}
+
+#search {
+    grid-area: search;
+    font-size: var(--font-size-l);
+    border-radius: var(--spacing-regular);
+    padding: var(--spacing-med);
 }
 
 .container,
@@ -134,7 +143,7 @@ body {
 }
 
 .five-day-forecast-container .day-wise-forecast .min-temp,
-.five-day-forecast-container .day-wise-forecast .min-temp {
+.five-day-forecast-container .day-wise-forecast .max-temp {
     font-size: var(--spacing-regular);
     font-weight: var(--font-bold);
 }

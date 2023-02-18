@@ -4,6 +4,11 @@ const iconUrl = (icon) => `https://openweathermap.org/img/wn/${icon}@2x.png`;
 
 
 // get data
+const getCities = async (searchTxt) => {
+    const respone = await  fetch (`http://api.openweathermap.org/geo/1.0/direct?q=${searchTxt}&limit=5&appid=${API_KEY}`)
+    return respone.json();
+}
+
 const getCurrentWeatherData = async () => {
     const city = 'jakarta';
     const respone = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
@@ -111,8 +116,17 @@ const loadFiveDayForecast = (hourlyForecast) => {
 
 // make load data end
 
+const onSearchChange = (event) => {
+    let {value} = event.target;
+    getCities(value);
+}
+
 // render data
 document.addEventListener("DOMContentLoaded", async () => {
+    
+    const seatchInput = document.querySelector("#search")
+    seatchInput.addEventListener("input", onSearchChange);
+
     const currentWeather = await getCurrentWeatherData();
     const hourlyForecast = await getHourlyForecast(currentWeather);
     // load 

@@ -10,13 +10,21 @@
   </head>
   <body>
     <main class="container">
+      
+      <input list="cities" type="search" name="search" id="search" placeholder="Search City">
+      <datalist id="cities">
+        <option value="jakarta"></option>
+        <option value=""></option>
+      </datalist>
+
       <article id="current-forecast">
         <h1 class="city">City</h1>
-        <p class="temp">temp</p>
-        <p class="description">description</p>
+        <p class="temp">Temp</p>
+        <p class="description">Description</p>
         <img class="icon" src="" alt="" />
         <p class="min-max-temp">H L</p>
       </article>
+
       <article id="hourly-forecast">
         <h1>Hourly Forecast</h1>
         <section class="hourly-container">
@@ -27,6 +35,7 @@
           </article>
         </section>
       </article>
+
       <article id="five-forecast">
         <h1>Five day forecast</h1>
         <section class="five-day-forecast-container">
@@ -44,14 +53,17 @@
           </article>
         </section>
       </article>
+
       <article id="feels-like">
         <h1>Feels Like</h1>
         <p class="temp">temp</p>
       </article>
+
       <article id="humidity">
         <h1>Humidity</h1>
         <p class="temp">temp</p>
       </article>
+
     </main>
     <script src="App.js"></script>
   </body>
