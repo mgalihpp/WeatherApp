@@ -1,6 +1,6 @@
 const API_KEY = "78e6e7cc4debbb107ac22d94b22de759";
 const formatTemp = (temp) => `${temp?.toFixed(1)}°`;
-const iconUrl = (icon) => `http://openweathermap.org/img/wn/${icon}@2x.png`;
+const iconUrl = (icon) => `https://openweathermap.org/img/wn/${icon}@2x.png`;
 
 // get data
 const getCurrentWeatherData = async () => {
