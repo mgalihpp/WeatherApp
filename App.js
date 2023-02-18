@@ -38,7 +38,7 @@ const loadCurrentForecast = ({ name, main: {temp, temp_min, temp_max, feels_like
 }
 
 const loadHourlyForecast = (hourlyForecast) => {
-    let dataFor12Hours = hourlyForecast.slice(1, 13);
+    let dataFor12Hours = hourlyForecast.slice(2, 13);
     const hourlyContainer = document.querySelector(".hourly-container");
     let InnerHTMLString = ``;
 
