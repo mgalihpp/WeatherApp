@@ -29,7 +29,7 @@ body {
     margin: 0 auto;
     font-family: Arial, Helvetica, sans-serif;
     width: 400px;
-    background: gray;
+    background: cyan;
 }
 
 /* mobile layout */
@@ -100,6 +100,43 @@ body {
 
 #five-forecast {
     grid-area: fiveday;
+    text-align: center;
+}
+
+#five-forecast .five-day-forecast-container {
+    display: grid;
+    grid-auto-flow: row;
+}
+
+.five-day-forecast-container .day-wise-forecast {
+    display: grid;
+    grid-template: auto / repeat(4, 1fr);
+    gap: var(--spacing-med);
+    place-items: center;
+}
+
+.five-day-forecast-container .day-wise-forecast .day {
+    text-transform: capitalize;
+    justify-self: start;
+}
+
+.five-day-forecast-container .day-wise-forecast .min-temp {
+    opacity: 50%;
+}
+
+.five-day-forecast-container .day-wise-forecast .max-temp {
+    justify-self: end;
+}
+
+.five-day-forecast-container .day-wise-forecast .icon {
+    width: 75px;
+    height: 75px;
+}
+
+.five-day-forecast-container .day-wise-forecast .min-temp,
+.five-day-forecast-container .day-wise-forecast .min-temp {
+    font-size: var(--spacing-regular);
+    font-weight: var(--font-bold);
 }
 
 #feels-like {
