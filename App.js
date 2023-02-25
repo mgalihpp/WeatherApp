@@ -102,13 +102,13 @@ const loadFiveDayForecast = (hourlyForecast) => {
     Array.from(dayWiseForecast).map(([day, {temp_max, temp_min, icon}], index) => {
         
         if(index <5) {
-            dayWiseInfo += `
-            <article class="day-wise-forecast">
+        dayWiseInfo += `
+        <article class="day-wise-forecast">
             <h3 class="day">${index === 0? "Hari Ini": day}</h3>
             <img class="icon" src="${iconUrl(icon)}" alt="" />
-        <p class="min-temp">${formatTemp(temp_min)}</p>
-        <p class="max-temp">${formatTemp(temp_max)}</p>
-      </article>`;
+            <p class="min-temp">${formatTemp(temp_min)}</p>
+            <p class="max-temp">${formatTemp(temp_max)}</p>
+        </article>`;
     }
     });
     container.innerHTML = dayWiseInfo;
